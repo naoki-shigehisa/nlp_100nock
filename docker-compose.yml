@@ -1,0 +1,12 @@
+version: '2.3'
+services:
+  nlp:
+    container_name: "nlp"
+    build: .
+    image: naokishigehisa/nlp
+    volumes: 
+      - ./work:/work
+    ports: 
+      - 9876:9876
+    command: jupyter lab --ip=0.0.0.0 --port=9876 --allow-root --no-browser --notebook-dir='/work'
+    
